@@ -1,5 +1,52 @@
 # 小红书调研工作流 (OpenCLI + Chrome CDP)
 
+## 降级策略（先看这里）
+
+CDP 流程有三个常见断点：Chrome 没开调试口、DOM selector 失效、API 返回 300011 风控。
+**任何断点不得阻塞整个 Phase 2**，按以下三级依次降级：
+
+### Level 1 — CDP + API 拦截（最优）
+
+完整流程，见下方「最小复现流程」。获得结构化 JSON，信号最干净。
+
+### Level 2 — CDP 可用但 selector / API 失效
+
+selector 找不到时，退回 `document.body.innerText.slice(0, 3000)` 作为原始文本，
+人工或 LLM 从中提取店名、地址、核心判断句。
+质量略低，但仍是第一手内容。
+
+DOM selector 按优先级依次尝试：
+```js
+// 标题
+document.querySelector('#detail-title')?.innerText
+  ?? document.querySelector('h1')?.innerText
+  ?? document.querySelector('[class*="title"]')?.innerText
+
+// 正文
+document.querySelector('#detail-desc')?.innerText
+  ?? document.querySelector('[class*="desc"]')?.innerText
+  ?? document.querySelector('article')?.innerText
+
+// 作者
+document.querySelector('.author-container .username')?.innerText
+  ?? document.querySelector('[class*="username"]')?.innerText
+```
+
+全部失败时直接用 `body.innerText`，截前 3000 字符。
+
+### Level 3 — CDP 完全不可用
+
+跳过 CDP，用以下方式补信号：
+
+1. **WebFetch 尝试**：用 `https://www.xiaohongshu.com/search_result?keyword=<encoded>` 发起 WebFetch，
+   提取页面文本中的店名、评价关键词。成功率不稳定（反爬），但值得一试。
+2. **降级到大众点评**：XHS 信号标注为"不可用"，该店仅依赖大众点评判断，在写回中注明。
+3. **不得跳过整店**：即使 XHS 完全拿不到，也要在写回里留一行 `小红书：调研失败，见大众点评`。
+
+**原则：Phase 2 必须有输出，哪怕部分信号缺失。**
+
+---
+
 ## 前提
 
 `agent-reach` 的小红书 MCP 通道不稳定。稳定方案是 OpenCLI + Chrome CDP。

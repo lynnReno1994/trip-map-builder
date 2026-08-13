@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>成都·重庆 2025</title>
+<title>成都·重庆 2026</title>
 <meta name="description" content="9/3–9/7 成都+重庆 5日 | 4人 | 舞室+夜生活">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -909,160 +909,128 @@ a:hover { text-decoration: underline; }
 // ║  REPLACE THIS SECTION — Hotel and Days data                 ║
 // ╚══════════════════════════════════════════════════════════════╝
 
-const HOTEL = { name: '成都酒店（D1–D2）', lat: 30.6588, lng: 104.0820 };
+const HOTEL = { name: '成都酒店（建设路）', lat: 30.6773, lng: 104.0990 };
 
 const DAYS = [
   { id: 0, label: '总览', color: '#0071e3', locations: [] },
 
   {
-    id: 1, label: 'D1 成都', date: '9/3 周四', title: '成都｜落地 + 第一个舞室', color: '#ff9500',
+    id: 1, label: 'D1 成都', date: '9/3 周四', title: '成都｜落地 + 建设路夜宵', color: '#ff9500',
     locations: [
       {
         name: '天府机场 T2',
         lat: 30.3162, lng: 104.4431,
         type: 'transport', time: '10:30',
-        desc: '落地出站 → 地铁 18 号线直达市区，约 50 分钟，¥20',
-        detail: '18号线天府机场站 → 锦城广场/天府广场方向\n无需换乘，备好零钱或手机支付'
+        desc: '落地出站 → 地铁 18 号线直达市区，约 50 分钟，¥20/人',
+        detail: '18号线天府机场站 → 建设路站方向\n建设路站下车，步行或打车到酒店\n提前下载高德/百度地图离线包'
       },
       {
-        name: '成都酒店',
-        lat: 30.6588, lng: 104.0820,
+        name: '成都酒店（建设路）',
+        lat: 30.6773, lng: 104.0990,
         type: 'hotel', time: '12:30',
-        desc: '放行李，换装，休整一下',
+        desc: '成华区建设路附近 check-in。两个舞室都在这一带，晚上出行方便',
         pay: { alipay: 1, wechat: 1 }
       },
       {
-        name: '午饭（就近苍蝇馆子）',
-        lat: 30.6580, lng: 104.0830,
+        name: '午饭（建设路附近）',
+        lat: 30.6760, lng: 104.0980,
         type: 'food', time: '13:30',
-        desc: '刚落地别跑远，就近找评分高的小馆，吃碗面或抄手',
+        desc: '就近找，别跑远。建设路旁边苍蝇馆子很多，吃碗面或抄手',
         budget: '¥30–50/人',
         pay: { alipay: 1, wechat: 1 },
-        dianpingKeyword: '成都锦江区午饭'
+        dianpingKeyword: '建设路 午饭 成都'
       },
       {
-        name: '下午随逛（玉林路一带）',
-        lat: 30.6476, lng: 104.0637,
+        name: '东郊记忆',
+        lat: 30.6706, lng: 104.0941,
         type: 'spot', time: '15:00',
-        desc: '4人刚落地，不排满。玉林路转转，找个咖啡馆坐坐'
+        desc: '老工厂改造的文创园区，Hello Dance 旗舰店就在里面。下午逛逛顺便踩点',
+        xhsKeyword: '东郊记忆 成都'
       },
       {
-        name: '晚饭（玉林路）',
-        lat: 30.6476, lng: 104.0637,
-        type: 'food', time: '18:00',
-        desc: '成都最有生活气的街区，随便走进一家看着顺眼的',
-        budget: '¥60–80/人',
+        name: '杨记一盏灯烧烤',
+        lat: 30.6773, lng: 104.0990,
+        type: 'food', time: '18:30',
+        desc: '建设路聚餐大热门，烧烤氛围好，4人聚餐有包间',
+        budget: '¥60–100/人',
         pay: { alipay: 1, wechat: 1 },
-        dianpingKeyword: '玉林路晚饭 成都'
+        dianpingKeyword: '杨记一盏灯 成都'
       },
       {
-        name: 'Hello Dance 成都',
-        lat: 30.6480, lng: 104.0796,
-        type: 'spot', time: '20:00',
-        desc: '第一晚舞室。提前看公众号确认当晚排课',
-        detail: '关注公众号或小红书查当晚课程\n注意换舞鞋',
+        name: '建设路宵夜夜市',
+        lat: 30.6760, lng: 104.0975,
+        type: 'drink', time: '21:00',
+        desc: '傅记排骨 / 烤苕皮 / 冰粉 扫街。第一晚不安排舞室，纯吃喝放松',
+        budget: '¥30–50/人',
         pay: { alipay: 1, wechat: 1 },
-        xhsKeyword: 'Hello Dance 成都',
-        dianping: false
-      },
-      {
-        name: 'Krazy Up 成都',
-        lat: 30.6604, lng: 104.0823,
-        type: 'spot', time: '—',
-        desc: '备选第一晚舞室。两家看当天排课情况选一个',
-        pay: { alipay: 1, wechat: 1 },
-        xhsKeyword: 'Krazy Up 成都',
-        dianping: false
+        dianpingKeyword: '建设路 宵夜 成都'
       }
     ]
   },
 
   {
-    id: 2, label: 'D2 成都', date: '9/4 周五', title: '成都｜白天自由 + 第二个舞室', color: '#34c759',
+    id: 2, label: 'D2 成都', date: '9/4 周五', title: '成都｜两个舞室', color: '#34c759',
     locations: [
       {
-        name: '早饭',
-        lat: 30.6588, lng: 104.0820,
-        type: 'food', time: '09:30',
-        desc: '酒店周边或叫外卖，不用着急出门',
-        budget: '¥20–40/人',
-        pay: { alipay: 1, wechat: 1 }
-      },
-      {
-        name: '猛追湾',
-        lat: 30.6753, lng: 104.0966,
-        type: 'spot', time: '—',
-        desc: '滨河公园改造区，成都本地年轻人最爱。适合下午茶随便走，人不算多',
-        xhsKeyword: '猛追湾 成都',
-        dianping: false
-      },
-      {
-        name: '玉林路咖啡',
-        lat: 30.6476, lng: 104.0637,
-        type: 'drink', time: '—',
-        desc: '玉林路咖啡馆密集，随便进一家坐坐',
+        name: '早午饭',
+        lat: 30.6773, lng: 104.0990,
+        type: 'food', time: '10:00',
+        desc: '睡到自然醒，酒店周边随便找，不用着急',
         budget: '¥30–50/人',
         pay: { alipay: 1, wechat: 1 },
-        dianpingKeyword: '玉林路咖啡'
-      },
-      {
-        name: '锦里古街',
-        lat: 30.6419, lng: 104.0447,
-        type: 'spot', time: '—',
-        desc: '武侯祠旁打卡，走一圈就够了，游客很多',
-        xhsKeyword: '锦里 成都'
+        dianpingKeyword: '建设路 早饭 成都'
       },
       {
         name: '宽窄巷子',
         lat: 30.6712, lng: 104.0594,
         type: 'spot', time: '—',
-        desc: '老街区文艺感强，比锦里稍舒服，适合拍照喝咖啡',
+        desc: '老街区文艺感，打卡拍照。打车约15分钟，下午去人少一些',
         xhsKeyword: '宽窄巷子 成都'
       },
       {
-        name: '晚饭（舞室附近）',
-        lat: 30.6500, lng: 104.0750,
+        name: '锦里古街',
+        lat: 30.6419, lng: 104.0447,
+        type: 'spot', time: '—',
+        desc: '武侯祠旁，走一圈就够。和宽窄巷子选一个',
+        xhsKeyword: '锦里 成都'
+      },
+      {
+        name: '晚饭（舞室前吃饱）',
+        lat: 30.6773, lng: 104.0990,
         type: 'food', time: '18:00',
-        desc: '优先在舞室附近区域吃，不用多跑一趟',
+        desc: '两个舞室中间不吃饭，提前在建设路附近吃好，垫足了再去',
         budget: '¥60–80/人',
         pay: { alipay: 1, wechat: 1 },
-        dianpingKeyword: '成都晚饭'
+        dianpingKeyword: '建设路 晚饭 成都'
       },
       {
-        name: 'Krazy Up 成都',
-        lat: 30.6604, lng: 104.0823,
-        type: 'spot', time: '20:00',
-        desc: '第二晚舞室',
+        name: 'Hello Dance 东郊旗舰店',
+        lat: 30.6706, lng: 104.0941,
+        type: 'spot', time: '19:00',
+        desc: '零基础 JAZZ · 小墨 · 19:00–20:00（1小时热身先上）\n成华区建设南支路1号，东郊记忆21号楼三楼',
+        detail: '⚠️ 需提前在 Hello Dance 公众号预约\n穿舒适运动服，带换鞋\n1小时课，20:00准时结束，立刻打车去 Krazy Up',
         pay: { alipay: 1, wechat: 1 },
-        xhsKeyword: 'Krazy Up 成都',
+        xhsKeyword: 'Hello Dance 成都 东郊',
         dianping: false
       },
       {
-        name: 'Hello Dance（备选）',
-        lat: 30.6480, lng: 104.0796,
-        type: 'spot', time: '—',
-        desc: '第二晚备选舞室，两家错开',
+        name: 'Krazy Up 舞蹈工作室',
+        lat: 30.6840, lng: 104.1150,
+        type: 'spot', time: '20:25',
+        desc: '金大铭 JAZZ三星课 · 20:25–21:40 🔥\n成华区二仙桥东八区影视文创园 C1-1',
+        detail: '⚠️ 金大铭课极度抢手 — 100人/场，当前排队35人\n立刻联系 Krazy Up 客服问 9/4 预约开放时间\n开放瞬间4人同时抢！打车约10分钟，20:10前到',
         pay: { alipay: 1, wechat: 1 },
-        xhsKeyword: 'Hello Dance 成都',
+        xhsKeyword: 'Krazy Up 成都 金大铭',
         dianping: false
       },
       {
-        name: '玉林路酒吧街',
-        lat: 30.6470, lng: 104.0630,
-        type: 'drink', time: '22:30',
-        desc: '舞室散场后收尾，玉林路夜晚有很多小酒馆，看灯进',
+        name: '建设路宵夜 + 喝酒',
+        lat: 30.6760, lng: 104.0980,
+        type: 'drink', time: '22:00',
+        desc: '舞室结束直接回建设路收尾。宵夜 + 小酒馆，能量耗完了先吃再喝',
         budget: '¥80–120/人',
         pay: { alipay: 1, wechat: 1 },
-        dianpingKeyword: '玉林路酒吧 成都'
-      },
-      {
-        name: '建设路酒吧街（备选）',
-        lat: 30.6773, lng: 104.1009,
-        type: 'drink', time: '—',
-        desc: '离猛追湾不远，风格更年轻',
-        budget: '¥80–120/人',
-        pay: { alipay: 1, wechat: 1 },
-        dianpingKeyword: '建设路酒吧 成都'
+        dianpingKeyword: '建设路 酒吧 成都'
       }
     ]
   },
@@ -1226,7 +1194,7 @@ const DAYS = [
 
 function overviewContent() {
   return `
-<div class="hero"><h1>成都·重庆 2025</h1><p class="subtitle">9/3–9/7 · 5天4晚 · 4人 · 舞室+夜生活</p></div>
+<div class="hero"><h1>成都·重庆 2026</h1><p class="subtitle">9/3–9/7 · 5天4晚 · 4人 · 舞室+夜生活</p></div>
 <div class="info-grid">
   <div class="info-card"><div class="label">住宿</div><div class="value">成都（D1–D2）<br>重庆（D3–D5）</div></div>
   <div class="info-card"><div class="label">航班</div><div class="value">9/3 天府T2落地<br>9/7 21:55 江北T3</div></div>

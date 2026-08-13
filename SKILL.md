@@ -22,8 +22,19 @@ the original plan.
 
 ## Shared memory
 
-Before planning or building, read `~/.trip-map-builder/MEMORY.md` if it
-exists. Use it only for durable traveler context:
+### 读哪里
+
+按以下优先级选一个，不要同时写两处：
+
+1. **Claude Code 环境**（项目目录下有 `.claude/` 且 auto memory 可用）：
+   使用 auto memory 系统（`~/.claude/projects/<hash>/memory/`）。
+   写旅行偏好时用 `type: user` 或 `type: project` 的独立 `.md` 文件，遵循 auto memory 格式。
+
+2. **其他环境**（Cursor、其他 IDE、命令行）：
+   使用 `~/.trip-map-builder/MEMORY.md`。文件不存在时继续，不要阻塞。
+
+Before planning or building, load memory from whichever path above applies.
+Use it only for durable traveler context:
 
 - pace preference
 - food and drink preferences
@@ -32,13 +43,12 @@ exists. Use it only for durable traveler context:
 - previously generated trip outputs
 - recurring constraints and unresolved follow-ups
 
-If the file does not exist, continue normally. Do not block on memory setup.
-
 Do not store raw screenshots, passport data, booking codes, full chat logs, or
 other sensitive/private material.
 
-After each completed trip plan, research pass, or map build, update
-`~/.trip-map-builder/MEMORY.md` with only durable facts:
+After each completed trip plan, research pass, or map build, write back durable
+facts to the active memory path. For `~/.trip-map-builder/MEMORY.md`, use this
+template:
 
 ```md
 # Trip Map Builder Memory
