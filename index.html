@@ -234,7 +234,7 @@ a:hover { text-decoration: underline; }
 // ║  REPLACE THIS SECTION — Hotel and Days data                 ║
 // ╚══════════════════════════════════════════════════════════════╝
 
-const HOTEL = { name: '成都酒店（建设路）', lat: 30.6773, lng: 104.0990 };
+const HOTEL = { name: '全季酒店（万象城玉双路店）', lat: 30.6655, lng: 104.1085 };
 
 const DAYS = [
   { id: 0, label: '总览', color: '#0071e3', locations: [] },
@@ -243,27 +243,27 @@ const DAYS = [
     id: 1, label: 'D1 成都', date: '9/3 周四', title: '成都｜落地 + 建设路夜宵', color: '#ff9500',
     locations: [
       {
-        name: '天府机场 T2',
-        lat: 30.3162, lng: 104.4431,
-        type: 'transport', time: '10:30',
-        desc: '落地出站 → 地铁 18 号线直达市区，约 50 分钟，¥20/人',
-        detail: '18号线天府机场站 → 建设路站方向\n建设路站下车，步行或打车到酒店\n提前下载高德/百度地图离线包'
+        name: '双流机场 T2 落地',
+        lat: 30.5785, lng: 103.9456,
+        type: 'transport', time: '11:25',
+        desc: '上海浦东 08:20 起飞 → 11:25 落地双流T2\n出站后 → 地铁 10 号线 → 太平园换乘 3 号线 → 玉双路站，全程约 45 分钟，¥10–15/人',
+        detail: '双流T2 负二层（B2）乘10号线，开往太平园方向\n太平园站换乘3号线（开往红花堰方向）\n玉双路站下车，步行约3分钟到酒店\n提前下载高德/百度地图离线包，开通国内流量'
       },
       {
-        name: '成都酒店（建设路）',
-        lat: 30.6773, lng: 104.0990,
+        name: '全季酒店（万象城玉双路店）',
+        lat: 30.6655, lng: 104.1085,
         type: 'hotel', time: '12:30',
-        desc: '成华区建设路附近 check-in。两个舞室都在这一带，晚上出行方便',
+        desc: '成华区一环路东三段 check-in，玉双路地铁站步行3分钟（3号线）。Hello Dance、Krazy Up 都在成华区，打车10–15分钟',
         pay: { alipay: 1, wechat: 1 }
       },
       {
-        name: '午饭（建设路附近）',
-        lat: 30.6760, lng: 104.0980,
+        name: '午饭（万象城/玉双路附近）',
+        lat: 30.6655, lng: 104.1085,
         type: 'food', time: '13:30',
-        desc: '就近找，别跑远。建设路旁边苍蝇馆子很多，吃碗面或抄手',
+        desc: '就近找，别跑远。万象城B1/B2有食堂小馆，或周边苍蝇馆子吃碗面或抄手',
         budget: '¥30–50/人',
         pay: { alipay: 1, wechat: 1 },
-        dianpingKeyword: '建设路 午饭 成都'
+        dianpingKeyword: '万象城 午饭 成都 成华'
       },
       {
         name: '东郊记忆',
@@ -274,7 +274,7 @@ const DAYS = [
       },
       {
         name: '杨记一盏灯烧烤',
-        lat: 30.6773, lng: 104.0990,
+        lat: 30.6655, lng: 104.1085,
         type: 'food', time: '18:30',
         desc: '建设路聚餐大热门，烧烤氛围好，4人聚餐有包间',
         budget: '¥60–100/人',
@@ -282,13 +282,13 @@ const DAYS = [
         dianpingKeyword: '杨记一盏灯 成都'
       },
       {
-        name: '建设路宵夜夜市',
-        lat: 30.6760, lng: 104.0975,
+        name: '玉双路/万象城宵夜',
+        lat: 30.6655, lng: 104.1075,
         type: 'drink', time: '21:00',
-        desc: '傅记排骨 / 烤苕皮 / 冰粉 扫街。第一晚不安排舞室，纯吃喝放松',
+        desc: '万象城周边扫街，烤苕皮 / 冰粉 / 串串。第一晚不安排舞室，纯吃喝放松',
         budget: '¥30–50/人',
         pay: { alipay: 1, wechat: 1 },
-        dianpingKeyword: '建设路 宵夜 成都'
+        dianpingKeyword: '玉双路 宵夜 成都 成华'
       }
     ]
   },
@@ -298,12 +298,12 @@ const DAYS = [
     locations: [
       {
         name: '早饭',
-        lat: 30.6773, lng: 104.0990,
+        lat: 30.6655, lng: 104.1085,
         type: 'food', time: '09:00',
         desc: '酒店周边随便找，吃快一点，10:30 前要出发去春熙路',
         budget: '¥20–30/人',
         pay: { alipay: 1, wechat: 1 },
-        dianpingKeyword: '建设路 早饭 成都'
+        dianpingKeyword: '玉双路 早饭 成都'
       },
       {
         name: 'GOGO EGO（壹购潮流广场）',
@@ -332,9 +332,9 @@ const DAYS = [
       },
       {
         name: '回酒店换衣服',
-        lat: 30.6773, lng: 104.0990,
+        lat: 30.6655, lng: 104.1085,
         type: 'hotel', time: '17:00',
-        desc: '打车回建设路，换舞蹈服、休息一下，18:45 出门赶 Hello Dance',
+        desc: '打车回全季（玉双路），换舞蹈服、休息一下，18:45 出门赶 Hello Dance（打车约10分钟）',
       },
       {
         name: 'Chili Dance',
@@ -384,13 +384,13 @@ const DAYS = [
         dianping: false
       },
       {
-        name: '建设路晚饭 + 宵夜',
-        lat: 30.6760, lng: 104.0980,
+        name: '玉双路晚饭 + 宵夜',
+        lat: 30.6655, lng: 104.1075,
         type: 'drink', time: '22:00',
-        desc: '跳完舞直接回建设路，这顿是正餐兼宵夜。能量耗完了先吃饱再喝',
+        desc: '跳完舞打车回酒店周边，这顿是正餐兼宵夜。能量耗完了先吃饱再喝',
         budget: '¥80–120/人',
         pay: { alipay: 1, wechat: 1 },
-        dianpingKeyword: '建设路 酒吧 成都'
+        dianpingKeyword: '玉双路 酒吧 成都 成华'
       }
     ]
   },
@@ -409,20 +409,22 @@ const DAYS = [
         name: '重庆北站',
         lat: 29.6022, lng: 106.5234,
         type: 'transport', time: '11:30',
-        desc: '到站后打车/地铁去市区酒店 check in'
+        desc: '到站后地铁3号线（重庆北站南广场）→ 红旗河沟站，约5站10分钟，步行550米到酒店',
+        detail: '南广场出站找3号线，方向：鱼洞\n红旗河沟站下车，步行至红黄路10号希尔顿欢朋'
       },
       {
-        name: '重庆市区酒店',
-        lat: 29.5600, lng: 106.5680,
+        name: '希尔顿欢朋酒店（观音桥步行街）',
+        lat: 29.5830, lng: 106.5520,
         type: 'hotel', time: '14:00',
-        desc: '重庆起伏极大，提前注意酒店到地铁的高差',
+        desc: '江北区红黄路10号，红旗河沟地铁站（3号线）步行550米。就在观音桥步行街核心，D4舞室、北仓、夜生活全部步行可达',
         pay: { alipay: 1, wechat: 1 }
       },
       {
-        name: '下午轻松（解放碑附近随逛）',
-        lat: 29.5571, lng: 106.5744,
+        name: '下午轻松（观音桥步行街随逛）',
+        lat: 29.5830, lng: 106.5520,
         type: 'spot', time: '15:30',
-        desc: '不用着急，晚上才是重头'
+        desc: '酒店就在步行街里，出门即是商场和餐厅。不用着急，晚上打车去洪崖洞约20分钟',
+        detail: '北仓文创步行约15分钟\n观音桥步行街有龙湖北城天街、新壹街，随便逛'
       },
       {
         name: '洪崖洞',
@@ -446,7 +448,7 @@ const DAYS = [
         name: '解放碑晚饭（备选）',
         lat: 29.5571, lng: 106.5744,
         type: 'food', time: '—',
-        desc: '离酒店近，不想跑去南滨路的备选',
+        desc: '不想跑南滨路时的备选，打车约20分钟。或直接在观音桥附近吃',
         budget: '¥80–120/人',
         pay: { alipay: 1, wechat: 1 },
         dianpingKeyword: '解放碑 重庆 火锅'
@@ -589,8 +591,8 @@ const DAYS = [
         name: '重庆江北机场 T3',
         lat: 29.7191, lng: 106.6414,
         type: 'transport', time: '18:30',
-        desc: '最晚 18:30 出发。打车约 45–60 分钟，周一晚可能有堵车，不要卡点',
-        detail: '建议 18:00 前出发保险\n提前办理网上值机\n⚠️ 液体底料过安检有风险'
+        desc: '最晚 18:30 出发。观音桥步行街打车约 30–45 分钟至T3，周一晚可能有堵车，不要卡点',
+        detail: '建议 18:00 前出发保险\n⚠️ T3 航站楼，3号线到 T2 后需步行或换乘，直接打车更稳\n提前办理网上值机\n⚠️ 液体底料过安检有风险'
       },
       {
         name: '起飞',
@@ -611,9 +613,9 @@ function overviewContent() {
 <div class="hero"><h1>成都·重庆 2026</h1><p class="subtitle">9/3–9/7 · 5天4晚 · 4人 · 舞室+夜生活</p></div>
 <div class="info-grid">
   <div class="info-card"><div class="label">住宿</div><div class="value">成都（D1–D2）<br>重庆（D3–D5）</div></div>
-  <div class="info-card"><div class="label">航班</div><div class="value">9/3 天府T2落地<br>9/7 21:55 江北T3</div></div>
+  <div class="info-card"><div class="label">航班</div><div class="value">9/3 08:20浦东→11:25双流T2<br>9/7 21:55 江北T3离港</div></div>
   <div class="info-card"><div class="label">城际交通</div><div class="value">高铁 成都东→重庆北<br>约 1.5h · ¥100</div></div>
-  <div class="info-card"><div class="label">市区交通</div><div class="value">地铁+打车<br>成都18号线→市区¥20</div></div>
+  <div class="info-card"><div class="label">市区交通</div><div class="value">地铁+打车<br>成都10号线→换3号线¥15</div></div>
 </div>
 <div class="section-head">行程概览</div>
 <div class="day-list">${DAYS.slice(1).map(d=>`<div class="card" onclick="go(${d.id})"><div class="name"><span class="dot" style="background:${d.color}"></span>${d.label} · ${d.title}</div><div class="desc">${d.date}</div></div>`).join('')}</div>
